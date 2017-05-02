@@ -49,7 +49,7 @@ const webpackMerge = require("webpack-merge");
 
 module.exports = webpackMerge(commonConfig, {
     output: {
-        path: path.resolve("dist");
+        path: path.resolve("dist"),
         filename: "[name].bundle.js"
     },
     plugins: [
@@ -68,7 +68,7 @@ const commonConfig = require("./webpack/webpack.common..js");
 
 module.exports = webpackMerge(commonConfig, {
     output: {
-        path: path.resolve("dist");
+        path: path.resolve("dist"),
         filename: "[name].bundle.js"
     }
 });
