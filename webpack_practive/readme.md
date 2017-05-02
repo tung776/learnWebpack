@@ -1,11 +1,17 @@
 bước 1: Cài đặt các module nodejs cần thiết:
 webpack, webpack-merge, webpack-dev-server
-babel, babel-loader, babel-prest-es2015, babel-preset-react
+babel, babel-loader, babel-preset-es2015, babel-preset-react
 cross-env
 exact-text-webpack-plugin, css-loader, sass-loader, node-sass, style-loader
 rimraf
 react, react-dom
 
+npm i --save-dev webpack webpack-dev-server webpack-merge cross-env 
+                react react-dom babel babel-loader babel-preset-es2015
+                babel-preset-react extract-text-webpack-plugin
+                html-webpack-plugin css-loader sass-loader node-sass style-loader
+                rimraf
+2.
 thêm dòng mã sau vào package.json:
 scripts: {
     "dev": 'webpack-dev-server',
@@ -13,11 +19,13 @@ scripts: {
     "clear": ' rimraf ./dist/* '
 }
 
+3.
 tạo file .babelrc với nội dung như sau:
 {
     "presets": ["es2015", "react"]
 }
 
+4.
 tạo webpack.config.js với nội dung sau
 
 switch(process.env.APP_ENV){
@@ -29,6 +37,7 @@ switch(process.env.APP_ENV){
     break;
 }
 
+5.
 Tạo thư mục webpack và file webpack.production.js với nội dung sau:
 const commonConfig = require('./webpack.common.js');
 const path = require("path");
@@ -47,6 +56,7 @@ module.exports = webpackMerge(commonConfig, {
     ]
 });
 
+6.
 Tạo file mới với tên là webpack.development.js
 
 const path = require("path");
@@ -61,6 +71,7 @@ module.exports = webpackMerge(commonConfig, {
     }
 });
 
+7.
 Tạo file mới webpack.common.js
 
 const path = require("path");
@@ -111,6 +122,7 @@ module.exports = {
     ]
 }
 
+8.
 tạo file ./src/app.js (đăng ký các file js đầu vào cho webpack)
 
 require("server.js");
@@ -118,6 +130,7 @@ require("models.js");
 
 ...
 
+9.
 tạo file vendor.js
 
 import react from "react";
