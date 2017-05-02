@@ -11,6 +11,8 @@ npm i --save-dev webpack webpack-dev-server webpack-merge cross-env
                 babel-preset-react extract-text-webpack-plugin
                 html-webpack-plugin css-loader sass-loader node-sass style-loader
                 rimraf
+
+
 2.
 thêm dòng mã sau vào package.json:
 scripts: {
